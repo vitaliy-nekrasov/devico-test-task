@@ -16,10 +16,10 @@ function foo(obj) {
   for (const key in obj) {
     // if the value of the key is a number, convert it to a boolean,
     // change the value, and convert it back to a number (this method is possible
-    //  only if the numbers in the object are 0 or 1)
+    //  only if the numbers in the object equal to 0 or 1)
     if (typeof obj[key] === "number") {
       obj[key] = Number(!Boolean(obj[key]));
-      // if the value of the key is an object, apply the same function to it
+      // if the value of the key is an object, then apply the same function to it
     } else {
       foo(obj[key]);
     }

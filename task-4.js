@@ -4,7 +4,7 @@
 // Imagine that your DOM has only a body node in it.
 // All elements should be added from your js file.
 
-// create markup and add it to index.html
+// create a markup and add it to index.html
 const markup = `<div class="container">
       <span class="grid__item grid__item--01">0</span>
       <div class="grid">
@@ -19,7 +19,7 @@ const markup = `<div class="container">
 const bodyEl = document.querySelector("body");
 bodyEl.insertAdjacentHTML("afterbegin", markup);
 
-// select an array of items elements and for each separately apply
+// select an array of items elements and apply for each separately
 // a background color and a click event listener
 const itemsEl = document.querySelectorAll("span");
 itemsEl.forEach((item) => {
@@ -28,7 +28,7 @@ itemsEl.forEach((item) => {
   item.addEventListener("click", handler);
 });
 
-// a function that, when clicked, changes the background color and the click counter
+// a function for background color changes and countering clicks
 function onSectionClick() {
   let count = 0;
   return function (e) {

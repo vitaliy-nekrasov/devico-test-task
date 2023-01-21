@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
 }
 
 .grid {
@@ -12,10 +13,14 @@
 .grid__item {
   border: 1px solid black;
   padding: 10px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
+}
+
+.grid__item--01 {
+  padding-top: 120px;
 }
 
 .grid__item:nth-child(2) {
@@ -29,6 +34,7 @@
 .grid__item:nth-child(4) {
   grid-area: block03;
   height: 100px;
+  padding-top: 80px;
 }
 
 .grid__item:nth-child(5) {

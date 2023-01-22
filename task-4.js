@@ -8,25 +8,19 @@
 const markup = `<div class="container">
       <span class="grid__item grid__item--01">0</span>
       <div class="grid">
-        <span class="grid__item">0</span>
-        <span class="grid__item">0</span>
-        <span class="grid__item">0</span>
-        <span class="grid__item">0</span>
-        <span class="grid__item">0</span>
+        ${new Array(5).fill('<span class="grid__item">0</span>').join("")}
       </div>
     </div>`;
 
 const bodyEl = document.querySelector("body");
 bodyEl.insertAdjacentHTML("afterbegin", markup);
 
-// select an array of items elements and apply for each separately
-// a background color and a click event listener
-const itemsEl = document.querySelectorAll("span");
-itemsEl.forEach((item) => {
-  item.style.backgroundColor = getRandomHexColor();
-  const handler = onSectionClick();
-  item.addEventListener("click", handler);
-});
+// generate color function
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
 
 // a function for background color changes and countering clicks
 function onSectionClick() {
@@ -38,9 +32,11 @@ function onSectionClick() {
   };
 }
 
-// generate color function
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+// select an array of items elements and apply for each separately
+// a background color and a click event listener
+const itemsEl = document.querySelectorAll("span");
+itemsEl.forEach((item) => {
+  item.style.backgroundColor = getRandomHexColor();
+  const handler = onSectionClick();
+  item.addEventListener("click", handler);
+});

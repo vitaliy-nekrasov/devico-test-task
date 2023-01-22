@@ -18,6 +18,9 @@
   text-align: center;
   cursor: pointer;
 }
+.grid__item::selection {
+  background-color: transparent;
+}
 
 .grid__item--01 {
   padding-top: 120px;
